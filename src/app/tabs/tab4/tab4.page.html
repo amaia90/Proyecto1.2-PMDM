@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 4
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #formulario="ngForm">
+  <ion-list>
+
+    <ion-item>
+  <ion-label>Adivina un número del 0 al 100</ion-label> <!--Le pongo el título de lo que tiene que hacer el usuario, adivinar un número-->
+  <ion-button [disabled]="formulario.invalid" (click)="onClick()">Comprobar</ion-button><!--Aquí desactivo el buttón mientras el formulario no sea válido, es decir el required sea true-->
+      <!--Se llama a la función comprobar a través del evento clic-->
+</ion-item>
+
+<ion-item>
+  <ion-label>Número:</ion-label><!--Label con el título número-->
+  <ion-input type="number" name="numero" min="0" max="100" placeholder="Introduce un número a adivinar" [(ngModel)]="numero1" required></ion-input>
+<!--Creo un input para recoger el número del usuario y lo llevo a ts a través de ngmodel y con el nombre de numero1. Este campo es requerido por lo que el usuario deberá introducir un valor-->
+</ion-item>
+
+<ion-item>
+  <ion-label 
+    *ngIf="numeroAleatorio<numero1"><ion-label color="danger" >{{menor}}</ion-label>{{otro}}</ion-label>
+    <!--Añado varios if recogiendo todas las opciones y enlazando con el ts-->
+    <ion-label *ngIf="numeroAleatorio>numero1"><ion-label color="danger" >{{mayor}}</ion-label>{{otro}}</ion-label>
+    <ion-label *ngIf="numeroAleatorio==numero1"><ion-label color="danger" >{{igual}}</ion-label></ion-label>
+</ion-item>
+</ion-list>
+  
+
+</form>
+</ion-content>
