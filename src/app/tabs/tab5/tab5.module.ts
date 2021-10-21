@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-
+import{ComponentesModule} from 'src/app/shared/componentes/componentes.module';
 import { Tab5PageRoutingModule } from './tab5-routing.module';
-import { ExploreContainerComponentModule } from 'src/app/explore-container/explore-container.module';
+//import { ExploreContainerComponentModule } from 'src/app/shared/componentes/explore-container/explore-container.module';
 import { Tab5Page } from './tab5.page';
 
 @NgModule({
@@ -13,8 +13,9 @@ import { Tab5Page } from './tab5.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ExploreContainerComponentModule,
-    Tab5PageRoutingModule
+    //ExploreContainerComponentModule,
+    Tab5PageRoutingModule,
+    ComponentesModule
   ],
   declarations: [Tab5Page]
 })

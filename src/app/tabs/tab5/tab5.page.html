@@ -1,10 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 5
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header-tab titulo="Fotos y enlaces"></app-header-tab>
 <ion-list *ngFor="let it of valoresLista">
   <ion-item a href="http://www.{{it.url}}">
     <ion-img src="assets/img/{{it.imagen}}"></ion-img>
